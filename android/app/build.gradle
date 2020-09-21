@@ -178,6 +178,36 @@ android {
 
         }
     }
+
+    flavorDimensions "version"
+    productFlavors {
+        qa {
+            dimension "version"
+            versionNameSuffix ""
+            applicationIdSuffix ".qa"
+        }
+        uat {
+            dimension "version"
+            versionNameSuffix ""
+            applicationIdSuffix ".uat"
+        }
+        dev {
+            dimension "version"
+            versionNameSuffix ""
+            applicationIdSuffix ".dev"
+        }
+        prod {
+            dimension "version"
+            versionNameSuffix ""
+            applicationIdSuffix ""
+        }
+    }
+
+    android.applicationVariants.all { variant ->
+        variant.outputs.all {
+            outputFileName = "RNEnv_${variant.name}_v${variant.versionName}_b${variant.versionCode}.apk"
+        }
+    }
 }
 
 dependencies {
