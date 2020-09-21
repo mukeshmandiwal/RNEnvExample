@@ -5,6 +5,9 @@
   "scripts": {
     "android": "react-native run-android",
     "ios": "react-native run-ios",
+    "ios:dev": "react-native run-ios --scheme 'RNEnvExample-Dev'" ,
+    "ios:prod": "react-native run-ios --scheme 'RNEnvExample-Prod'",
+    "ios:qa": "react-native run-ios --scheme 'RNEnvExample-Qa'",
     "start": "react-native start",
     "test": "jest",
     "lint": "eslint ."
